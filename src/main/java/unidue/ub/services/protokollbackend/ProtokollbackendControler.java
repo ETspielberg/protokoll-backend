@@ -3,9 +3,11 @@ package unidue.ub.services.protokollbackend;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,7 +40,10 @@ public class ProtokollbackendControler {
 		protokoll.setMode(mode.trim());
 		
 		List<Manifestation> manifestations = new ArrayList<Manifestation>();
-		
+		if (!identifier.isEmpty()) {
+			
+			
+		}
 		protokoll.addManifestation(manifestations);
 		return ResponseEntity.ok(protokoll);
 	}
